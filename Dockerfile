@@ -1,23 +1,16 @@
-# Stage 1: Build the Rust application
-FROM rust:latest as builder
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
-WORKDIR /usr/src/myapp
+# Install requirements for add-on
+RUN \
+  apk add --no-cache \
+    rustup
 
-# Copy dependencies and build
-COPY Cargo.toml Cargo.lock ./
-RUN cargo build --release
+WORKDIR /data
 
-# Copy the rest of the source code and build again
-COPY . .
-RUN cargo build --release
+# Copy data for add-on
+COPY -r src /
+COPY Cargo.toml /
+COPY Cargo.lock /
 
-# Stage 2: Create a minimal runtime image
-FROM debian:stable-slim
-
-WORKDIR /usr/local/bin
-
-# Copy the compiled binary from the build stage
-COPY --from=builder /usr/src/myapp/target/release/rust_addon .
-
-# Run the binary
-CMD ["./rust_addon"]
+CMD[ "cargo run" ]
