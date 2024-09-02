@@ -1,18 +1,12 @@
-ARG BUILD_FROM
-FROM $BUILD_FROM
-
-# Install rustup and the Rust toolchain
-RUN apk add --no-cache rustup && \
-    rustup-init -y --no-modify-path && \
-    source $HOME/.cargo/env && \
-    rustup default stable
+FROM rust:latest
 
 WORKDIR /build
 
 # Copy files
-COPY Cargo.toml Cargo.lock run.sh /build/
-COPY src/ /build/src/
+COPY . .
 
-RUN chmod +x /build/run.sh
+# Build the Rust project
+RUN cargo build --release
 
-CMD ["/build/run.sh"]
+# Run the compiled binary
+CMD ["./target/release/test_addon"]
