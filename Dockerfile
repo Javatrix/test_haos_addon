@@ -1,10 +1,11 @@
 ARG BUILD_FROM
 FROM $BUILD_FROM
 
-# Install requirements for add-on
-RUN \
-  apk add --no-cache \
-    rustup
+# Install rustup and the Rust toolchain
+RUN apk add --no-cache rustup && \
+    rustup-init -y --no-modify-path && \
+    source $HOME/.cargo/env && \
+    rustup default stable
 
 WORKDIR /data
 
