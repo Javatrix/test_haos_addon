@@ -23,7 +23,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("Hello, {username}!");
 
-    let tcp_listener = TcpListener::bind("127.0.0.1:9128")?;
+    let tcp_listener = TcpListener::bind("0.0.0.0:9128")?;
     for stream in tcp_listener.incoming() {
         match stream {
             Ok(stream) => handle_client(stream),

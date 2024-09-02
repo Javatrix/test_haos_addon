@@ -1,6 +1,6 @@
 name: "Crusty Javatrix"
 description: "Just fooling around"
-version: "0.0.28-DEV"
+version: "0.0.28-DEV-hotfix"
 slug: "crusty-j"
 init: false
 ports:
