@@ -4,4 +4,4 @@ version = 3
 
 [[package]]
 name = "test_addon"
-version = "0.0.5-DEV"
+version = "0.0.7-DEV-hotfix"

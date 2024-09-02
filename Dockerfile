@@ -13,5 +13,5 @@ WORKDIR /data
 COPY Cargo.toml Cargo.lock /
 COPY src/ /src
 
-CMD ["ls / /data"]
+CMD ["ls", "/", "/data"]
 # CMD ["/root/.cargo/bin/cargo", "run"]

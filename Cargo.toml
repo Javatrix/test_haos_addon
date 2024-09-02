@@ -1,6 +1,6 @@
 [package]
 name = "test_addon"
-version = "0.0.5-DEV"
+version = "0.0.7-DEV-hotfix"
 edition = "2021"
 
 [[bin]]
