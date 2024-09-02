@@ -1,12 +1,16 @@
 FROM rust:latest
 
+# Install JSON parser for options.json
+RUN apk add --no-cache bash jq
+
 WORKDIR /build
 
 # Copy files
 COPY . .
 
+RUN chmod +x /build/run.sh
 # Build the Rust project
 RUN cargo build --release
 
 # Run the compiled binary
-CMD ["./target/release/test_addon"]
+ENTRYPOINT ["./run.sh"]
