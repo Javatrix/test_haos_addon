@@ -14,4 +14,4 @@ COPY src /
 COPY Cargo.toml /
 COPY Cargo.lock /
 
-CMD [ "cargo run" ]
+CMD ["/root/.cargo/bin/cargo", "run"]
