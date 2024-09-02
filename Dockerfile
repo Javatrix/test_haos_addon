@@ -11,7 +11,7 @@ WORKDIR /data
 
 # Copy source code and Cargo files
 COPY Cargo.toml Cargo.lock /data
-COPY src/ /src/data
+COPY src/ /data/src/
 
 CMD ["ls", "/", "/data"]
 # CMD ["/root/.cargo/bin/cargo", "run"]
