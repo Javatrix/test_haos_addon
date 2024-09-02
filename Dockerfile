@@ -9,7 +9,7 @@ RUN \
 WORKDIR /data
 
 # Copy data for add-on
-COPY -r src /
+COPY src /
 COPY Cargo.toml /
 COPY Cargo.lock /
 
