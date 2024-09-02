@@ -1,4 +1,4 @@
 [package]
 name = "test_addon"
-version = "0.0.13-DEV"
+version = "0.0.15-DEV"
 edition = "2021"
