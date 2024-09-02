@@ -3,6 +3,8 @@ description: "Just fooling around"
 version: "0.0.26-DEV"
 slug: "crusty-j"
 init: false
+ports:
+  9128/tcp: 9128
 arch:
   - aarch64
   - amd64
