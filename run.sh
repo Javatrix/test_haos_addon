@@ -1,4 +1,4 @@
 #!/bin/bash
-source $HOME/.cargo/env
+source /root/.cargo/env
 cd build
 cargo run
