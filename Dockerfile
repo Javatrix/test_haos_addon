@@ -12,5 +12,7 @@ RUN chmod +x /build/run.sh
 # Build the Rust project
 RUN cargo build --release
 
+EXPOSE 9128
+
 # Run the compiled binary
 ENTRYPOINT ["./run.sh"]

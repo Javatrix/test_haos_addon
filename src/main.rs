@@ -1,4 +1,4 @@
-use std::fs;
+use std::net::TcpListener;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("Starting the add-on...");
@@ -11,9 +11,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("Hello, {username}!");
 
-    let test_file = fs::write("test.txt", "Test message from the best Rust add-on ever :3");
+    let tcp_listener = TcpListener::bind("127.0.0.1:9128")?;
+    for stream in tcp_listener.incoming() {
+        let stream = stream.unwrap();
 
-    println!("{:?}", test_file);
+        println!("Estabilished connection: {}", stream.local_addr().unwrap());
+    }
 
     Ok(())
 }
