@@ -13,6 +13,4 @@ WORKDIR /build
 COPY Cargo.toml Cargo.lock /build/
 COPY src/ /build/src/
 
-RUN ls / /build
-RUN cd /build
-# CMD ["/root/.cargo/bin/cargo", "run"]
+CMD ["ls", "/build", "&&", "/root/.cargo/bin/cargo", "run"]
