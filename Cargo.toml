@@ -1,0 +1,8 @@
+[package]
+name = "test_addon"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "rust_addon"
+path = "src/main.rs"
