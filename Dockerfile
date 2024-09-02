@@ -9,8 +9,10 @@ RUN apk add --no-cache rustup && \
 
 WORKDIR /build
 
-# Copy source code and Cargo files
-COPY Cargo.toml Cargo.lock /build/
+# Copy files
+COPY Cargo.toml Cargo.lock run.sh /build/
 COPY src/ /build/src/
 
-CMD ["ls", "/build", "&&", "cargo", "run"]
+RUN chmod +x /build/run.sh
+
+CMD ["/build/run.sh"]
