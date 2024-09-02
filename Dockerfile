@@ -1,7 +1,7 @@
 FROM rust:latest
 
 # Install JSON parser for options.json
-RUN apk add --no-cache bash jq
+RUN apk add --no-cache jq
 
 WORKDIR /build
 
