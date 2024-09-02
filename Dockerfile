@@ -7,7 +7,7 @@ RUN apk add --no-cache rustup && \
     source $HOME/.cargo/env && \
     rustup default stable
 
-WORKDIR /data
+WORKDIR /build
 
 # Copy source code and Cargo files
 COPY Cargo.toml Cargo.lock /data/
