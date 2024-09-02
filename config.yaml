@@ -1,6 +1,6 @@
 name: "Crusty Javatrix"
 description: "Just fooling around"
-version: "0.0.24-DEV"
+version: "0.0.25-DEV"
 slug: "crusty-j"
 init: false
 arch:

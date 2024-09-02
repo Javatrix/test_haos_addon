@@ -1,4 +1,4 @@
-use std::io::stdin;
+use std::fs;
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     println!("Starting the add-on...");
@@ -11,13 +11,9 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
     println!("Hello, {username}!");
 
-    let input = std::io::read_to_string(stdin());
-    if let Err(error) = input {
-        return Err(Box::new(error));
-    }
-    let input = input.unwrap();
+    let test_file = fs::write("test.txt", "Test message from the best Rust add-on ever :3");
 
-    println!("GOT THE INPUT!\n\t: {input}");
+    println!("{:?}", test_file);
 
     Ok(())
 }
